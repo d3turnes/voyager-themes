@@ -1,0 +1,26 @@
+{
+    "name": "d3turnes/voyager-themes",
+    "description": "This hook will add support for Voyager front-end themes",
+    "type": "project",
+    "require": {
+        "tcg/voyager": "^1.4|^1.5|^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "D3turnes\\VoyagerThemes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Turnes",
+            "email": "d3turnes@gmail.com"
+        }
+    ],
+	"extra": {
+		"laravel": {
+			"providers": "D3turnes\\VoyagerThemes\\SllizeVoyagerThemesServiceProvider"
+		}
+	},
+	"version": "1.0",
+    "minimum-stability": "dev"
+}
