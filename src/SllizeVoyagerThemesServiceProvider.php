@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
+use D3turnes\VoyagerThemes\Commands\ThemeGenerator;
 
 class SllizeVoyagerThemesServiceProvider extends ServiceProvider
 {
@@ -43,8 +44,11 @@ class SllizeVoyagerThemesServiceProvider extends ServiceProvider
         // publish config
         $this->publishes([dirname(__DIR__) . '/config/themes.php' => config_path('themes.php')], 'voyager-themes-config');
 
-        // load helpers
+		// load helpers
         @include __DIR__ . '/helpers.php';
+
+        // load Commands
+        $this->commands(ThemeGenerator::class);
     }
 
     /**

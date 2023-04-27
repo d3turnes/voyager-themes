@@ -27,6 +27,12 @@ As an example if you have a folder called **sample-theme** and inside that folde
 }
 ```
 
+Or if you prefer you can use the command
+
+```bash
+php artisan make:theme "My First Theme"
+```
+
 Voyager Themes will detect this as a new theme. You can also include a sample screenshot of your theme, which would be **sample-theme.jpg** *(800x500px) for best results*
 
 In fact, you can checkout the sample-theme repo here: [https://github.com/thedevdojo/sample-theme](https://github.com/thedevdojo/sample-theme)
@@ -55,8 +61,18 @@ You will want to publish the `voyager-themes-config`, and you will now see a new
 return [
 
     'themes_folder' => resource_path('views/themes'),
-    'publish_assets' => true
-
+    'publish_assets' => true,
+	'theme_image' => storage_path('app/public/theme.jpg'),
+	'rectangle' => true,
+    'text' => [
+        'file' => public_path('fonts/ArianaVioleta-dz2K.ttf'),
+        'size' => 120,
+        'color' => [255, 255, 255, 0.5],
+        'align' => 'center',
+        'valign' => 'center',
+        'angle' => 0
+    ]
+	
 ];
 ```
 
